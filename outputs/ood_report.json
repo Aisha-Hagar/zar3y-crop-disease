@@ -1,0 +1,30 @@
+{
+  "dataset_summary": {
+    "total_ood_samples": 30,
+    "top1_accuracy": 0.2,
+    "domain_shift_delta": -0.2
+  },
+  "highlighted_failure_cases": [
+    {
+      "image_path": "data/field_photos/Tomato___Leaf_Mold/field_1.jpg",
+      "true_class": "Tomato___Leaf_Mold",
+      "predicted_class": "Pepper_bell___Bacterial_spot",
+      "confidence": 0.7732867002487183,
+      "gradcam_analysis_saved_to": "outputs/grad_cam_examples/failure_case_1.png"
+    },
+    {
+      "image_path": "data/field_photos/Tomato___Leaf_Mold/field_2.jpg",
+      "true_class": "Tomato___Leaf_Mold",
+      "predicted_class": "Pepper_bell___Bacterial_spot",
+      "confidence": 0.7732867002487183,
+      "gradcam_analysis_saved_to": "outputs/grad_cam_examples/failure_case_2.png"
+    },
+    {
+      "image_path": "data/field_photos/Tomato___Leaf_Mold/field_0.jpg",
+      "true_class": "Tomato___Leaf_Mold",
+      "predicted_class": "Pepper_bell___Bacterial_spot",
+      "confidence": 0.7732867002487183,
+      "gradcam_analysis_saved_to": "outputs/grad_cam_examples/failure_case_3.png"
+    }
+  ]
+}
