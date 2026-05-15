@@ -2,8 +2,8 @@
   "float_model": {
     "path": "models/model_float.tflite",
     "size_mb": 13.884,
-    "avg_latency_ms": 12.05,
-    "p95_latency_ms": 13.91,
+    "avg_latency_ms": 13.14,
+    "p95_latency_ms": 19.11,
     "accuracy": 0.0
   },
   "int8_model": {
@@ -15,7 +15,7 @@
   },
   "compression_ratio_x": 3.47,
   "accuracy_drop": 0.0,
-  "latency_speedup_x": -12.05,
+  "latency_speedup_x": -13.14,
   "benchmark_images": 100,
   "calibration_images": 200,
   "passes_spec": {
