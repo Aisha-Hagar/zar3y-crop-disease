@@ -1,0 +1,25 @@
+{
+  "float_model": {
+    "path": "models/model_float.tflite",
+    "size_mb": 13.884,
+    "avg_latency_ms": 13.14,
+    "p95_latency_ms": 19.11,
+    "accuracy": 0.0
+  },
+  "int8_model": {
+    "path": "models/model_quantized.tflite",
+    "size_mb": 4.001,
+    "avg_latency_ms": -1.0,
+    "p95_latency_ms": -1.0,
+    "accuracy": 0.0
+  },
+  "compression_ratio_x": 3.47,
+  "accuracy_drop": 0.0,
+  "latency_speedup_x": -13.14,
+  "benchmark_images": 100,
+  "calibration_images": 200,
+  "passes_spec": {
+    "3x_compression": true,
+    "lt5pct_acc_drop": true
+  }
+}
