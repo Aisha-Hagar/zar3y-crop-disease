@@ -3,6 +3,9 @@ import cv2
 import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
+import base64
+from io import BytesIO
+from PIL import Image
 
 def compute_gradcam(model, img_array, intensity=0.5, res=224):
     base_model = model.get_layer("MobileNetV3Large")
@@ -62,3 +65,18 @@ def save_side_by_side(original, overlay, save_path, title_text="Grad-CAM"):
     plt.tight_layout()
     plt.savefig(save_path, bbox_inches='tight', dpi=150)
     plt.close()
+
+
+def get_gradcam_overlay_base64(model, img_array, intensity=0.5, res=224):
+    """
+    Returns base64-encoded PNG of Grad‑CAM overlay.
+    model: Keras model (float)
+    img_array: preprocessed image with shape (1, 224, 224, 3), values in [0,1]
+    """
+    _, _, overlay = compute_gradcam(model, img_array, intensity, res)
+    # overlay is a numpy array (uint8) of shape (224,224,3)
+    overlay_pil = Image.fromarray(overlay)
+    buffered = BytesIO()
+    overlay_pil.save(buffered, format="PNG")
+    img_base64 = base64.b64encode(buffered.getvalue()).decode()
+    return img_base64
