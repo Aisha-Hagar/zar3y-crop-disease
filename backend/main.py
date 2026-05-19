@@ -8,7 +8,7 @@ from fastapi.responses import JSONResponse
 from PIL import Image
 from pathlib import Path
 import sys
-sys.path.append("src")  # allow import of your Grad-CAM module
+sys.path.append("src")  # allow import of Grad-CAM module
 from grad_cam import get_gradcam_overlay_base64
 
 app = FastAPI(title="Zar3y", description="Crop Disease Detection from Phone Photos")
@@ -66,9 +66,13 @@ async def predict(file: UploadFile = File(...)):
     # 4. Run TFLite inference
     input_details = interpreter.get_input_details()
     output_details = interpreter.get_output_details()
-    interpreter.set_tensor(input_details[0]['index'], input_tensor)
+    input_idx = input_details[0]['index']
+    output_idx = output_details[0]['index']
+    interpreter.set_tensor(input_idx, input_tensor)
     interpreter.invoke()
-    output_data = interpreter.get_tensor(output_details[0]['index'])
+    output_data = interpreter.get_tensor(output_idx)
+    print("Input tensor min/max:", input_tensor.min(), input_tensor.max())
+    print("Output logits:", output_data[0])
 
     # 5. Get prediction
     predicted_class_idx = np.argmax(output_data[0])
