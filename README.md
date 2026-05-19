@@ -17,4 +17,8 @@ Per-class count (Train Dataset)
 | Tomato___Leaf_Mold            | 666           |
 
 <img width="560" height="638" alt="classcounts" src="https://github.com/user-attachments/assets/68f16536-5d16-4efe-b690-88f1c04dadd9" />
-<img width="534" height="638" alt="classweights" src="https://github.com/user-attachments/assets/35d727ef-d1d5-4825-b2bf-1d3ea0616b8e" />
+
+## Demo
+
+<img width="800" height="450" alt="Zar3yDemo" src="https://github.com/user-attachments/assets/30fc3c37-7b30-4a42-bd15-163000c0cb05" />
+
